@@ -1,0 +1,433 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex; /* Ensure body takes full height for login-page flex */
+    flex-direction: column;
+  }
+  
+  .login-page {
+    background-color: rgba(216, 230, 255, 1);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows login-page to fill body */
+    align-items: stretch;
+  }
+  
+  /* Header Styles */
+  .main-header {
+    background-color: rgba(246, 255, 255, 1);
+    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.29);
+    width: 100%;
+    padding: 18px 70px; /* Adjusted padding slightly */
+  }
+  
+  .header-container {
+    display: flex;
+    gap: 20px;
+    align-items: center; /* Vertically align nav and actions columns */
+  }
+  
+  .nav-column {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 46%;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-family: Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 16px;
+    color: rgba(25, 56, 117, 1);
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    line-height: 1;
+  }
+  
+  .logo {
+    aspect-ratio: 1.02;
+    object-fit: contain;
+    object-position: center;
+    width: 104px;
+    align-self: stretch;
+    flex-shrink: 0;
+    max-width: 100%;
+  }
+  
+  .nav-link {
+    align-self: stretch;
+    margin: auto 0;
+    text-decoration: none;
+    color: rgba(25, 56, 117, 1);
+    white-space: nowrap;
+  }
+    
+  .actions-column {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 54%;
+    margin-left: 20px;
+  }
+  
+  .header-actions {
+    display: flex;
+    width: 100%;
+    align-items: center; /* Vertically center all actions */
+    gap: 20px; /* Adjusted gap */
+    flex-wrap: wrap;
+    justify-content: flex-end; /* Align actions to the right */
+  }
+  
+  .search-input {
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(230, 230, 230, 1); /* Light border */
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.08); /* Softer shadow */
+    display: flex;
+    padding: 10px 15px; /* Adjusted padding */
+    align-items: center;
+    gap: 8px; /* Adjusted gap */
+    flex-grow: 1; /* Allow search to take available space */
+    min-width: 150px; /* Minimum width for search */
+  }
+  
+  .search-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 16px;
+    flex-shrink: 0;
+  }
+  
+  .search-text-span {
+    font-size: 14px;
+    color: #737373;
+    line-height: 1;
+  }
+  
+  .login-button {
+    color: #fff;
+    background-color: #5B8DEF; /* Lighter blue for Log In button */
+    padding: 10px 25px; /* Adjusted padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Mulish, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.3px;
+    line-height: 1.5; /* Adjusted for padding */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    white-space: nowrap;
+  }
+
+  .header-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    cursor: pointer;
+    color: #252b42; /* Icon color */
+  }
+  
+  /* Login Card Styles */
+  .login-card-container {
+    align-self: center;
+    display: flex;
+    margin-top: 60px; /* Adjusted margin */
+    margin-bottom: 60px; /* Added margin bottom */
+    width: 100%;
+    max-width: 550px; /* Slightly reduced max-width for better centering feel */
+    padding: 0 20px; /* Padding for smaller screens */
+    justify-content: center;
+  }
+  
+  .login-card {
+    display: flex;
+    width: 100%;
+    max-width: 512px; /* Max width of the card itself */
+    min-height: 542px; /* Original min-height */
+    align-items: stretch;
+    justify-content: start;
+  }
+  
+  .login-card-content {
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    width: 100%;
+    padding: 40px 40px; /* Adjusted padding */
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 8px; /* Added border radius for card */
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.1); /* Added shadow for card */
+  }
+  
+  .login-title {
+    color: #252b42;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.1px;
+    margin-bottom: 30px; /* Space below title */
+  }
+    
+  .form-group {
+    display: flex;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 20px; /* Space between form groups */
+  }
+  
+  .form-label {
+    color: #252b42;
+    font-weight: 600; /* Slightly less bold */
+    font-size: 14px;
+    line-height: 20px; /* Adjusted line height */
+    margin-bottom: 8px; /* Space between label and input */
+  }
+  
+  .form-input {
+    color: #737373;
+    border-radius: 5px;
+    background-color: rgba(249, 249, 249, 1);
+    border: 1px solid rgba(230, 230, 230, 1);
+    padding: 12px 15px; /* Adjusted padding */
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5; /* Adjusted line height */
+    font-family: inherit;
+  }
+  
+  .terms-text {
+    margin-top: 5px; /* Reduced margin from password */
+    margin-bottom: 20px; /* Space to reCAPTCHA */
+    font-size: 12px;
+    color: #252b42;
+    font-weight: 500;
+    line-height: 1.6; /* Adjusted line height */
+  }
+  
+  .link-blue {
+    color: rgba(69, 124, 218, 1);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .link-blue:hover {
+    text-decoration: underline;
+  }
+
+  .recaptcha-container {
+    align-content: center;
+    padding: 10px 15px;
+    border: 1px solid #d3d3d3;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    margin-bottom: 25px; 
+  }
+  
+ 
+ 
+  .continue-button {
+    color: #fff;
+    border-radius: 5px;
+    background-color: rgba(69, 124, 218, 1); /* Original blue */
+    width: 100%;
+    padding: 12px 40px; /* Adjusted padding */
+    font-weight: 700;
+    font-size: 16px; /* Slightly larger font */
+    text-align: center;
+    line-height: 1.5; /* Adjusted line height */
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .help-text {
+    color: #252b42; /* Darker text */
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+    margin-top: 20px; /* Space from continue button */
+  }
+  
+/* Footer */
+.site-footer {
+  background-color: #193875;
+  color: white;
+  padding: 25px 30px;
+  font-size: 13px;
+  margin-top: auto; /* Pushes footer to bottom if content is short */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* Allow contact items to wrap */
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.contact-icon-placeholder {
+  max-width: 16px;
+}
+.contact-text {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+.contact-text:hover {
+  text-decoration: underline;
+}
+
+.promo-message {
+  text-align: center;
+  flex-grow: 1;
+  min-width: 200px; /* Ensure it doesn't get too squeezed */
+}
+
+.social-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.social-icons-group {
+    max-height: 24px;
+  }
+
+
+
+  /* Media Queries */
+  @media (max-width: 991px) {
+    .main-header {
+      padding: 15px 20px; /* Adjust padding for smaller screens */
+    }
+  
+    .header-container {
+      flex-direction: column;
+      align-items: stretch; /* Align items to stretch in column layout */
+      gap: 15px; /* Reduce gap */
+    }
+  
+    .nav-column, .actions-column {
+      width: 100%;
+      margin-left: 0;
+    }
+  
+    .nav-links {
+      justify-content: center; /* Center nav links */
+      gap: 20px; /* Reduce gap */
+      margin-top: 0; /* Remove margin from original CSS */
+      flex-wrap: wrap;
+    }
+  
+    .header-actions {
+      justify-content: center; /* Center actions */
+      gap: 15px; /* Reduce gap */
+      margin-top: 10px; /* Reduce margin */
+    }
+  
+    .search-input {
+      flex-grow: 0; /* Don't let search input grow too much */
+      width: 100%; /* Full width on small screens */
+      max-width: 300px; /* Max width for search */
+      margin: 0 auto; /* Center search if it's not full width */
+    }
+  
+    .login-button {
+      padding: 10px 20px; /* Adjust padding */
+    }
+  
+    .login-card-container {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+  
+    .login-card-content {
+      padding: 30px 20px; /* Adjust padding */
+    }
+  
+    .form-input {
+      padding: 12px 15px;
+    }
+  
+    .terms-text, .help-text {
+      font-size: 11px; /* Slightly smaller text for very small screens */
+    }
+  
+    .continue-button {
+      padding: 12px 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .contact-info {
+        justify-content: center;
+    }
+    .social-section {
+        justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nav-links {
+        gap: 10px;
+        font-size: 14px;
+    }
+    .header-actions {
+        flex-direction: column; /* Stack actions vertically */
+        align-items: center;
+    }
+    .search-input {
+        order: 1; /* Search first */
+    }
+    .login-button {
+        order: 2; /* Login button second */
+        width: 100%;
+        max-width: 200px;
+    }
+    .header-icon {
+        margin-top: 10px; /* Add space between stacked icons and button */
+    }
+    .heart-icon { order: 3; }
+    .cart-icon { order: 4; }
+    
+    .login-card-content {
+      padding: 25px 15px;
+    }
+    .login-title {
+      font-size: 20px;
+    }
+    .form-label, .form-input, .recaptcha-checkbox-area span {
+      font-size: 13px;
+    }
+    .continue-button {
+      font-size: 15px;
+    }
+  }
